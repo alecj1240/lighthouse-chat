@@ -22,6 +22,6 @@ io.on('connection', function (socket) {
 
 console.log(messageArray);
 
-server.listen(3000, function () {
+server.listen(process.env.PORT || 3000, function () {
   console.log('Chat server running');
 });
