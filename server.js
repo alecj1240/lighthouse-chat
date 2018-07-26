@@ -11,8 +11,8 @@ var messageArray = [];
 
 io.on('connection', function (socket) {
   socket.on('message', function (msg, initials) {
-    io.emit('message', msg, initials);
     messageArray.push([msg, initials]);
+    io.emit('message', msg, initials);
   });
   for(var i = 0; i < messageArray.length; i++) {
     io.emit('message', messageArray[i][0], messageArray[i][1]);
